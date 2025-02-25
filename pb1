@@ -14,12 +14,15 @@ int main()
 	{
 		while (fgets(numere, sizeof(numere), fptr) != NULL)
 		{
-			int x=0;
+			int x = 0;
 			int nr = 0;
 			for (i = 0; i < strlen(numere); i++)
-			{if((numere[i]>='0'&&numere[i]<='9')&&(numere[i]!='\n'))
-				x = numere[i] - '0';
-				nr = nr * 10 + x;
+			{
+				if ((numere[i] >= '0' && numere[i] <= '9') && (numere[i] != '\n'))
+				{
+					x = numere[i] - '0';
+					nr = nr * 10 + x;
+				}
 			}
 			s = s + nr;
 		}
