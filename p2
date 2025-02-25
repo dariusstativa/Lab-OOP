@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<cstring>
+
+FILE* fptr;
+
+int main()
+{
+	int i, j;
+	char s[256], a[100][100], k = 1, aux[256];
+	scanf("%[^\n]s", s);
+			char* p;
+			p = strtok(s," ");
+			while (p)
+			{
+				strcpy(a[k++], p);
+				p = strtok(NULL, " ");
+			}
+			k--;
+			for (i = 1; i < k; i++)
+				for (j = i + 1; j <= k; j++)
+					if (strlen(a[i]) < strlen(a[j]))
+					{
+						strcpy(aux, a[i]);
+						strcpy(a[i], a[j]);
+						strcpy(a[j], aux);
+					}
+			for (i = 1; i <= k; i++)
+				printf("%s\n", a[i]);
+		
+	}
